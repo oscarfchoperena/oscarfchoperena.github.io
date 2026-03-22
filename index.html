@@ -3,52 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oscar Flores Choperena</title>
-  <meta name="description" content="Profesor, consultor e investigador en emprendimiento, innovación, finanzas y vinculación universidad-empresa." />
+  <title>Oscar Everardo Flores Choperena</title>
+  <meta name="description" content="Profesor, consultor e investigador en emprendimiento, innovación, finanzas, vinculación universidad-empresa y formación de ecosistemas de emprendimiento." />
   <style>
     :root {
-      --bg: #0b1020;
-      --card: #131a2e;
-      --text: #eef2ff;
-      --muted: #b7c0d8;
+      --bg: #0a0f1a;
+      --bg2: #121a2a;
+      --card: rgba(255,255,255,.05);
+      --line: rgba(255,255,255,.12);
+      --text: #eef3ff;
+      --muted: #b6c2d9;
       --accent: #7dd3fc;
-      --line: rgba(255,255,255,.10);
+      --accent2: #c4b5fd;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #0b1020 0%, #111933 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at top right, rgba(125,211,252,.18), transparent 30%),
+        radial-gradient(circle at top left, rgba(196,181,253,.16), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.65;
     }
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 32px 20px 72px;
-    }
-    .hero {
-      padding: 48px 0 28px;
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px 72px; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(10,15,26,.72);
       border-bottom: 1px solid var(--line);
     }
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: .95rem;
+    }
+    .hero {
+      padding: 64px 0 36px;
+      display: grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .hero-panel, .side-panel, .section-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+    .hero-panel {
+      padding: 36px;
+    }
     .eyebrow {
+      display: inline-block;
       color: var(--accent);
-      font-weight: 700;
-      letter-spacing: .08em;
+      font-size: .82rem;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
     h1 {
-      font-size: clamp(2.1rem, 4vw, 4rem);
-      line-height: 1.05;
-      margin: 10px 0 14px;
+      font-size: clamp(2.2rem, 5vw, 4.7rem);
+      line-height: 1.03;
+      margin: 0 0 14px;
     }
-    .lead {
-      max-width: 760px;
+    .hero p {
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.06rem;
+      max-width: 800px;
     }
-    .cta {
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.03);
+      font-size: .94rem;
+    }
+    .btn-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -58,42 +118,110 @@
       display: inline-block;
       padding: 12px 18px;
       border-radius: 999px;
-      text-decoration: none;
       font-weight: 700;
       border: 1px solid var(--line);
       color: var(--text);
       background: rgba(255,255,255,.04);
+      text-decoration: none;
     }
     .btn.primary {
-      background: var(--accent);
       color: #07111f;
+      background: linear-gradient(135deg, var(--accent), #a5f3fc);
       border-color: transparent;
+    }
+    .side-panel {
+      padding: 28px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+    .metric {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .metric:last-child { border-bottom: 0; }
+    .metric strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .metric span { color: var(--muted); }
+    .section {
+      margin-top: 26px;
+      padding-top: 8px;
+    }
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 18px;
-      margin-top: 28px;
     }
-    .card {
+    .section-card {
       grid-column: span 12;
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-      backdrop-filter: blur(8px);
+      padding: 24px;
     }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.2rem;
-    }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
     .muted { color: var(--muted); }
-    ul {
+    .list-clean {
       margin: 0;
       padding-left: 18px;
     }
-    .two-col { grid-column: span 6; }
-    .three-col { grid-column: span 4; }
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .timeline-item {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+    .timeline-item .date {
+      color: var(--accent);
+      font-size: .92rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tag {
+      font-size: .83rem;
+      color: var(--muted);
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+    .pub-list, .course-list, .link-list {
+      display: grid;
+      gap: 14px;
+    }
+    .pub, .course, .link-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.03);
+    }
+    .pub strong, .course strong, .link-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .contact-box {
+      display: grid;
+      gap: 10px;
+    }
     footer {
       margin-top: 34px;
       padding-top: 24px;
@@ -101,86 +229,339 @@
       color: var(--muted);
       font-size: .95rem;
     }
-    a { color: var(--accent); }
-    @media (max-width: 840px) {
-      .two-col, .three-col { grid-column: span 12; }
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .span-6, .span-4 { grid-column: span 12; }
     }
   </style>
 </head>
 <body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">Oscar Everardo Flores Choperena</div>
+      <div class="nav-links">
+        <a href="#perfil">Perfil</a>
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#consultoria">Consultoría</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#podcasts">Podcasts</a>
+        <a href="#docencia">Docencia</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="wrap">
-    <section class="hero">
-      <div class="eyebrow">Emprendimiento · Innovación · Finanzas</div>
-      <h1>Oscar Flores Choperena</h1>
-      <p class="lead">
-        Profesor, consultor e investigador enfocado en emprendimiento universitario, validación de modelos de negocio,
-        inclusión financiera, formación docente y diseño de ecosistemas de innovación.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:oscarfchoperena@gmail.com">Escríbeme</a>
-        <a class="btn" href="https://www.linkedin.com/in/oscarfchoperena/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://medium.com/@oscarfchoperena" target="_blank" rel="noreferrer">Medium</a>
+    <section class="hero" id="perfil">
+      <div class="hero-panel">
+        <span class="eyebrow">Emprendimiento · Innovación · Finanzas · Educación Superior</span>
+        <h1>Profesor, consultor e investigador especializado en emprendimiento e innovación</h1>
+        <p>
+          Oscar Everardo Flores Choperena es consultor, investigador y profesor especializado en emprendimiento,
+          innovación y vinculación universidad–empresa, con más de una década de experiencia en instituciones de
+          educación superior, sector público y organismos internacionales. Su trabajo integra investigación aplicada,
+          validación de modelos de negocio, diseño de programas, formación docente y desarrollo de ecosistemas de innovación.
+        </p>
+        <p>
+          Es Maestro en Ingeniería por la UNAM, cursa la Maestría en Finanzas en la Universidad Iberoamericana y ha desarrollado
+          la propuesta conceptual <strong>VALEX (Validation Expenditures)</strong> para analizar financieramente los procesos de validación
+          de modelos de negocio en startups.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Gestión de centros de emprendimiento</span>
+          <span class="pill">Validación de modelo de negocio</span>
+          <span class="pill">Modelos de formación</span>
+          <span class="pill">Vinculación universidad-empresa</span>
+          <span class="pill">Servicios técnico-tecnológicos</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn primary" href="mailto:oscarfchoperena@gmail.com">Escríbeme</a>
+          <a class="btn" href="https://www.linkedin.com/in/oscarfchoperena/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://medium.com/@oscarfchoperena" target="_blank" rel="noreferrer">Medium</a>
+          <a class="btn" href="https://orcid.org/0009-0001-2086-9913" target="_blank" rel="noreferrer">ORCID</a>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="metric">
+          <strong>10+ años</strong>
+          <span>de experiencia en emprendimiento, innovación, vinculación y educación superior.</span>
+        </div>
+        <div class="metric">
+          <strong>VALEX</strong>
+          <span>línea de trabajo en análisis financiero de procesos de validación en startups.</span>
+        </div>
+        <div class="metric">
+          <strong>UNAM · IBERO · Anáhuac</strong>
+          <span>trayectoria profesional y docente en instituciones clave del ecosistema universitario mexicano.</span>
+        </div>
+        <div class="metric">
+          <strong>Consultoría aplicada</strong>
+          <span>proyectos con Banco Azteca, Xignux, INFONAVIT, Gobierno de Canadá y Hábitat para la Humanidad.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="trayectoria">
+      <h2>Trayectoria profesional y académica</h2>
+      <div class="grid">
+        <article class="section-card span-6">
+          <h3>Formación académica</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="date">2023–2025</div>
+              <h3>Universidad Iberoamericana — Maestría en Finanzas</h3>
+              <p class="muted">En proceso de graduación. Proyecto: VALEX (Validation Expenditures), herramienta de monitoreo y gestión de procesos de validación de modelos de negocio.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="date">2009–2011</div>
+              <h3>UNAM — Maestría en Ingeniería (Planeación)</h3>
+              <p class="muted">Tesis: <em>La consultoría como un proceso de intervención sistémica</em>.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="date">2003–2007</div>
+              <h3>Universidad Tecnológica de México — Ingeniería Industrial y de Sistemas</h3>
+              <p class="muted">Titulado por examen general de conocimientos CENEVAL. Mejor promedio generacional y Testimonio de Desempeño Sobresaliente.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="section-card span-6">
+          <h3>Perfil profesional</h3>
+          <p class="muted">
+            Ha ocupado posiciones de liderazgo en la Universidad Iberoamericana, la Universidad Anáhuac México y la UNAM,
+            desde donde ha impulsado programas de incubación, formación emprendedora, educación continua, innovación abierta,
+            acompañamiento empresarial y vinculación con actores estratégicos del ecosistema.
+          </p>
+          <p class="muted">
+            Su enfoque combina metodologías basadas en evidencia, aprendizaje experiencial, consultoría sistémica,
+            diseño de programas de emprendimiento y construcción de alianzas con sector público, empresas, fondos,
+            organismos internacionales y comunidades universitarias.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Lean Startup</span>
+            <span class="tag">Customer Development</span>
+            <span class="tag">Emprendimiento científico</span>
+            <span class="tag">Innovación abierta</span>
+            <span class="tag">Formación docente</span>
+            <span class="tag">Inclusión financiera</span>
+          </div>
+        </article>
+
+        <article class="section-card span-12">
+          <h3>Posiciones relevantes</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="date">Agosto 2025 – actual</div>
+              <h3>Universidad Anáhuac México — Coordinador de Programas de Emprendimiento Universitario</h3>
+              <p class="muted">Gestión de programas, premios, concursos, actualización y formación en emprendimiento para estudiantes y profesores. Organización de iniciativas como ILAN a la Innovación Universitaria y Hult Prize en sus capítulos institucionales.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="date">Septiembre 2021 – diciembre 2024</div>
+              <h3>Universidad Iberoamericana — Coordinador del Centro de Emprendimiento y Aceleración de Negocios</h3>
+              <p class="muted">Gestión de programas para Fomento Social CitiBanamex, diseño e implementación de consultoría empresarial y servicios técnicos, coordinación de concursos, talleres, seminarios y acompañamiento empresarial para la comunidad universitaria.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="date">Abril 2018 – marzo 2025</div>
+              <h3>UNAM — Instituto de Investigaciones en Materiales</h3>
+              <p class="muted">Coordinación de innovación, vinculación y educación continua. Desarrollo de seminarios, vinculación con industria y sector público, y operación del modelo de emprendimiento para proyectos de base tecnológica.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="date">Abril 2019 – junio 2020</div>
+              <h3>Naucalpan Emprende — Entrepreneur in Residence</h3>
+              <p class="muted">Coordinación del Programa de Incubación Integral Empresarial, asesoría estratégica y diseño del modelo de formación de emprendedores en línea.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="grid">
-      <article class="card two-col">
-        <h2>Sobre mí</h2>
-        <p class="muted">
-          Desarrollo programas, investigaciones y experiencias formativas en la intersección entre academia,
-          empresa y política pública. Mi trabajo combina rigor conceptual, diseño de modelos de negocio,
-          customer development, análisis financiero y vinculación universidad-empresa.
-        </p>
-      </article>
+    <section class="section" id="consultoria">
+      <h2>Proyectos de consultoría y vinculación</h2>
+      <div class="grid">
+        <article class="section-card span-4">
+          <h3>Banco Azteca</h3>
+          <p class="muted">Identificación de estrategias de inclusión financiera de las instituciones financieras en México (2025–2026).</p>
+        </article>
+        <article class="section-card span-4">
+          <h3>Xignux</h3>
+          <p class="muted">Desarrollo del modelo operativo de una incubadora de negocios corporativa (2021).</p>
+        </article>
+        <article class="section-card span-4">
+          <h3>Gobierno de Canadá</h3>
+          <p class="muted">Oportunidades de negocios para startups canadienses en el mercado de la industria 4.0 (2020–2021).</p>
+        </article>
+        <article class="section-card span-4">
+          <h3>Hábitat para la Humanidad</h3>
+          <p class="muted">Programa de innovación social para el desarrollo de proyectos de impacto (2018–2019).</p>
+        </article>
+        <article class="section-card span-4">
+          <h3>INFONAVIT</h3>
+          <p class="muted">Diseño de un programa de alineación estratégica para gerentes de recaudación fiscal (2018).</p>
+        </article>
+        <article class="section-card span-4">
+          <h3>UNAM e Instituto Nacional de Ecología</h3>
+          <p class="muted">Participación en proyectos de planeación regional sustentable, evaluación participativa de sistemas e inventarios de emisiones de gases de efecto invernadero.</p>
+        </article>
+      </div>
+    </section>
 
-      <article class="card two-col">
-        <h2>Líneas de trabajo</h2>
-        <ul class="muted">
-          <li>Emprendimiento universitario y formación docente</li>
-          <li>Validación financiera y metodología VALEX</li>
-          <li>Inclusión financiera y movilidad social</li>
-          <li>Diseño de cursos, talleres y experiencias de aprendizaje</li>
-          <li>Modelos de negocio e innovación aplicada</li>
-        </ul>
-      </article>
+    <section class="section" id="publicaciones">
+      <h2>Publicaciones y recursos en línea</h2>
+      <div class="grid">
+        <article class="section-card span-12">
+          <div class="pub-list">
+            <div class="pub">
+              <strong>VALEX (Validation Expenditure): Towards a financial understanding of innovation adoption processes in startups (2025)</strong>
+              <div class="muted">Entrepreneurial Business and Economics Review, 13(3).</div>
+              <a href="https://eber.uek.krakow.pl/index.php/eber" target="_blank" rel="noreferrer">Ver publicación</a>
+            </div>
+            <div class="pub">
+              <strong>Emprendimiento e Innovación: Guía de Estudio (2025)</strong>
+              <div class="muted">Edición Kindle.</div>
+              <a href="https://www.amazon.com.mx/dp/B0FXYQHN1J" target="_blank" rel="noreferrer">Ver en Amazon</a>
+            </div>
+            <div class="pub">
+              <strong>Modelo de la enseñanza del emprendimiento en las instituciones de educación superior (2025)</strong>
+              <div class="muted">Capítulo de libro.</div>
+              <a href="https://dialnet.unirioja.es/servlet/articulo?codigo=10380732" target="_blank" rel="noreferrer">Ver capítulo</a>
+            </div>
+            <div class="pub">
+              <strong>Identificación de retos y mejores prácticas de enseñanza del emprendimiento en las instituciones de educación superior en México (2025)</strong>
+              <div class="muted">Capítulo de libro.</div>
+              <a href="https://dialnet.unirioja.es/servlet/articulo?codigo=10380731" target="_blank" rel="noreferrer">Ver capítulo</a>
+            </div>
+            <div class="pub">
+              <strong>Introducción a la industria del entretenimiento (2025)</strong>
+              <div class="muted">Guía esencial para explorar el poder cultural y económico del entretenimiento.</div>
+              <a href="https://www.amazon.com.mx/dp/B0FRWHZBWD" target="_blank" rel="noreferrer">Ver en Amazon</a>
+            </div>
+            <div class="pub">
+              <strong>Towards the Adoption of A Novel More Integral Model for Teaching Entrepreneurship in Higher Education Institutions (2024)</strong>
+              <div class="muted">Evolutionary Studies in Imaginative Culture.</div>
+              <a href="https://doi.org/10.70082/esiculture.vi.910" target="_blank" rel="noreferrer">Ver DOI</a>
+            </div>
+            <div class="pub">
+              <strong>Diseño de un proceso de formación para educadores en emprendimiento en instituciones de educación superior (2024)</strong>
+              <div class="muted">Capítulo en Dykinson.</div>
+              <a href="https://www.dykinson.com/media/pdf/indice978-84-1070-145-8.pdf" target="_blank" rel="noreferrer">Ver referencia</a>
+            </div>
+            <div class="pub">
+              <strong>Innovación en el Modelo de Negocio (2022)</strong>
+              <div class="muted">Ebook.</div>
+              <a href="https://bit.ly/3rIhwgp" target="_blank" rel="noreferrer">Ver ebook</a>
+            </div>
+            <div class="pub">
+              <strong>Validación Ágil de Modelos de Negocio (2021)</strong>
+              <div class="muted">Ebook.</div>
+              <a href="https://bit.ly/3gCQ2T5" target="_blank" rel="noreferrer">Ver ebook</a>
+            </div>
+            <div class="pub">
+              <strong>Equipos Asombrosos con Súper Poderes (2021)</strong>
+              <div class="muted">Ebook.</div>
+              <a href="https://bit.ly/3Jl9dgj" target="_blank" rel="noreferrer">Ver ebook</a>
+            </div>
+            <div class="pub">
+              <strong>Consulting as a Systemic Intervention Process (2021)</strong>
+              <div class="muted">Capítulo en Springer.</div>
+              <a href="https://doi.org/10.1007/978-3-030-50089-4_3" target="_blank" rel="noreferrer">Ver DOI</a>
+            </div>
+            <div class="pub">
+              <strong>La consultoría como un proceso de intervención sistémica (2011)</strong>
+              <div class="muted">Versión disponible en línea.</div>
+              <a href="http://132.248.9.195/ptb2011/junio/0670794/Index.html" target="_blank" rel="noreferrer">Ver documento</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <article class="card three-col">
-        <h2>Proyecto destacado</h2>
-        <p class="muted"><strong>VALEX</strong>: propuesta para conceptualizar los gastos de validación en startups como una categoría diferenciada de CAPEX y OPEX.</p>
-      </article>
+    <section class="section" id="podcasts">
+      <h2>Podcasts académicos</h2>
+      <div class="grid">
+        <article class="section-card span-6">
+          <div class="link-list">
+            <div class="link-item">
+              <strong>Inclusión Financiera o Ilusión Financiera (2026)</strong>
+              <a href="https://open.spotify.com/show/3vG9DcwEXEllrMLB2u4cLF?si=f983814b3b2b40b0" target="_blank" rel="noreferrer">Escuchar en Spotify</a>
+            </div>
+            <div class="link-item">
+              <strong>Habilidades para emprender (2026)</strong>
+              <a href="https://open.spotify.com/show/2LJiSzKdSCpTKJVne9RVEw?si=-rs9aXopTlqG7WNObDWWvw" target="_blank" rel="noreferrer">Escuchar en Spotify</a>
+            </div>
+            <div class="link-item">
+              <strong>Diez tipos de Innovación</strong>
+              <a href="https://open.spotify.com/show/263YoAAHfUm8xpBm5V5I2W?si=5e8b988118844793" target="_blank" rel="noreferrer">Escuchar en Spotify</a>
+            </div>
+          </div>
+        </article>
+        <article class="section-card span-6">
+          <div class="link-list">
+            <div class="link-item">
+              <strong>Emprende desde la Uni: Ideas, Modelos, Startups y Pitch para Estudiantes (2025)</strong>
+              <a href="https://open.spotify.com/show/25YlxCRjqwZD72Va6p6eT6?si=InUMgxrIQtKGS0vnz51wCw" target="_blank" rel="noreferrer">Escuchar en Spotify</a>
+            </div>
+            <div class="link-item">
+              <strong>Modelos de negocio en Entretenimiento (2025)</strong>
+              <a href="https://open.spotify.com/show/3RruMko7dZQxoCIdYjij2V?si=g4956tGOTJqh9ux0-nmFqg" target="_blank" rel="noreferrer">Escuchar en Spotify</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <article class="card three-col">
-        <h2>Investigación aplicada</h2>
-        <p class="muted">Desarrollo agendas sobre inclusión financiera, emprendimiento, innovación y transferencia de conocimiento con enfoque en México.</p>
-      </article>
+    <section class="section" id="docencia">
+      <h2>Docencia y formación</h2>
+      <div class="grid">
+        <article class="section-card span-6">
+          <h3>Asignaturas recientes</h3>
+          <div class="course-list">
+            <div class="course"><strong>Universidad Anáhuac México</strong><span class="muted"> Emprendimiento e Innovación · Habilidades para Emprender</span></div>
+            <div class="course"><strong>Universidad Iberoamericana</strong><span class="muted"> Lean Startup · Modelos de Negocio en Entretenimiento</span></div>
+            <div class="course"><strong>UNAM – Facultad de Ciencias</strong><span class="muted"> Laboratorio de Innovación y Vinculación</span></div>
+            <div class="course"><strong>UNAM – Instituto de Investigaciones en Materiales</strong><span class="muted"> Customer Development · Lean Startup · Validación Ágil · Prototipado · Pitch y Storytelling</span></div>
+            <div class="course"><strong>ITESM</strong><span class="muted"> Innovación · Modelos de negocio · Prototipado · Validación</span></div>
+          </div>
+        </article>
+        <article class="section-card span-6">
+          <h3>Capacitación y programas relevantes</h3>
+          <ul class="list-clean muted">
+            <li>Universidad GBM — Formación de Asesores Financieros (2025).</li>
+            <li>TREPCAMP – ESIC BSM, Madrid (2024).</li>
+            <li>Diplomado en Formación educativa para la promoción de la Economía Social y Solidaria, ITESO (2023).</li>
+            <li>I-CORPS South Instructor Academy, Georgia Tech (2018).</li>
+            <li>Instructor adjunto en NYCRIN Innovation CORPS Short Course Program.</li>
+            <li>Certificaciones en innovación esbelta, mentoría y programas de sustentabilidad.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-      <article class="card three-col">
-        <h2>Docencia</h2>
-        <p class="muted">Diseño e imparto cursos sobre habilidades para emprender, Lean Startup, validación, innovación y modelos de negocio.</p>
-      </article>
-
-      <article class="card two-col">
-        <h2>Experiencia</h2>
-        <ul class="muted">
-          <li>Diseño y gestión de centros y programas de emprendimiento</li>
-          <li>Vinculación universidad-empresa</li>
-          <li>Investigación aplicada y producción académica</li>
-          <li>Mentoría de proyectos de innovación y base tecnológica</li>
-        </ul>
-      </article>
-
-      <article class="card two-col">
-        <h2>Contacto</h2>
-        <p class="muted">
-          Correo: <a href="mailto:oscarfchoperena@gmail.com">oscarfchoperena@gmail.com</a><br/>
-          LinkedIn: <a href="https://www.linkedin.com/in/oscarfchoperena/" target="_blank" rel="noreferrer">oscarfchoperena</a><br/>
-          Medium: <a href="https://medium.com/@oscarfchoperena" target="_blank" rel="noreferrer">@oscarfchoperena</a>
-        </p>
-      </article>
+    <section class="section" id="contacto">
+      <h2>Contacto</h2>
+      <div class="grid">
+        <article class="section-card span-6">
+          <div class="contact-box muted">
+            <div><strong>Correo:</strong> <a href="mailto:oscarfchoperena@gmail.com">oscarfchoperena@gmail.com</a></div>
+            <div><strong>Teléfono:</strong> <a href="tel:+525514511316">+52 55 1451 1316</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/oscarfchoperena/" target="_blank" rel="noreferrer">linkedin.com/in/oscarfchoperena</a></div>
+            <div><strong>Medium:</strong> <a href="https://medium.com/@oscarfchoperena" target="_blank" rel="noreferrer">medium.com/@oscarfchoperena</a></div>
+            <div><strong>ORCID:</strong> <a href="https://orcid.org/0009-0001-2086-9913" target="_blank" rel="noreferrer">0009-0001-2086-9913</a></div>
+          </div>
+        </article>
+        <article class="section-card span-6">
+          <h3>Enfoque de trabajo</h3>
+          <p class="muted">
+            Su línea de trabajo articula investigación aplicada, formación de talento, consultoría y construcción de alianzas estratégicas
+            con el objetivo de fortalecer ecosistemas de innovación, promover el emprendimiento de alto impacto y contribuir al desarrollo
+            económico y social desde la educación superior.
+          </p>
+        </article>
+      </div>
     </section>
 
     <footer>
-      Sitio base para GitHub Pages. Puedes personalizarlo con tus proyectos, publicaciones, clases, artículos y formulario de contacto.
+      Sitio profesional de Oscar Everardo Flores Choperena. Esta versión integra trayectoria, publicaciones, docencia, consultoría y recursos en línea.
     </footer>
   </div>
 </body>
